@@ -1,6 +1,5 @@
 class Answer < ActiveRecord::Base
-  has_many :questionanswers
-  has_many :questions, through: :questionanswers
+  belongs_to :question
 
   validates :description, presence: true
   validates :description, length: { minimum: 50 }
