@@ -1,6 +1,6 @@
 <h2> <%= @question.title %> </h2>
 
-<div class="">
+<div>
   <p><%= @question.description %></p>
   <ul>
     <% @question.answers.each do |answer| %>
@@ -10,11 +10,10 @@
   <%= link_to 'Edit', edit_question_path %>
   <br>
   <%= link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+  <br>
 </div>
-<br>
 
-<div class="">
+<div class="small-8">
   <%= form_for([@question, @answer]) do |form| %>
     <% if @answer.errors.any? %>
       <div id="error_explanation">
@@ -29,14 +28,13 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :description, "Add your own answer:" %>
-      <%= form.text_field :description %>
+      <%= form.text_area :description, placeholder: "Add your own answer" %>
     </div>
 
     <div class="actions">
       <%= form.submit %>
     </div>
   <% end %>
+  <br>
+  <%= link_to 'Back to all questions', questions_path %>
 </div>
-<br>
-<%= link_to 'Back to all questions', questions_path %>

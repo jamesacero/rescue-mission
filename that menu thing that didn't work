@@ -1,0 +1,13 @@
+<%= params %>
+<% if params[:action] = :show %>
+  <ul class="left">
+    <li class="has-dropdown">
+      <%= link_to 'Edit', edit_question_path %>
+      <ul class="dropdown">
+        <li>
+          <%= link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+<% end %>

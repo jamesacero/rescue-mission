@@ -15,3 +15,14 @@
  *= require foundation_and_overrides
 
  */
+body {
+  background-color: rgb(251, 243, 229);
+}
+
+nav ul li {
+  background-color: rgb(109, 203, 107);
+}
+
+#tacopony {
+  color: rgb(129, 36, 11);
+}
